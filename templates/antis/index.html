@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h1>Antis</h1>
+</div>
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= newAntisPath() %>" class="btn btn-primary">Create New Anti</a></li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+  <th>Name</th>
+    <th>NameFa</th>
+    <th>TypeName</th>
+    <th>TypeNameFa</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>AntiOrder</th>
+    <th>Price</th>
+    <th>PeriodDay</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (anti) in antis { %>
+      <tr>
+      <td><%= anti.Name %></td>
+        <td><%= anti.NameFa %></td>
+        <td><%= anti.TypeName %></td>
+        <td><%= anti.TypeNameFa %></td>
+        <td><%= anti.Description %></td>
+        <td><%= anti.Image %></td>
+        <td><%= anti.AntiOrder %></td>
+        <td><%= anti.Price %></td>
+        <td><%= anti.PeriodDay %></td>
+        <td>
+          <div class="pull-right">
+            <a href="<%= antiPath({ anti_id: anti.ID }) %>" class="btn btn-info">View</a>
+            <a href="<%= editAntiPath({ anti_id: anti.ID }) %>" class="btn btn-warning">Edit</a>
+            <a href="<%= antiPath({ anti_id: anti.ID }) %>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

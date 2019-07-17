@@ -1,0 +1,67 @@
+<div class="col-sm-12 form-group" >
+    <div class="row">
+
+        <table class="table table-striped">
+            <h2>
+                بازگرداند تاریخ آپدیت لایسنس ها به عقب
+            </h2>
+            <br>
+            <tr>
+                <th>شماره آنتی ویروس</th>
+                <th>نام انگلیسی آنتی ویروس</th>
+                <th>نام فارسی آنتی ویروس</th>
+                <th>نوع آنتی ویروس</th>
+                <th>شماره لایسنس</th>
+                <th style="max-width: 250px">متن اول لایسنس</th>
+                <th>تاریخ آپدیت لایسنس</th>
+                <th>عملیات</th>
+            </tr>
+
+            <%= for (anti) in antivirushas { %>
+            <tr>
+                <td><%= anti.ID %></td>
+                <td><%= anti.Name %></td>
+                <td><%= anti.NameFa %></td>
+                <td><%= anti.Type %></td>
+                <td><%= anti.License.ID %></td>
+                <td><%= raw(anti.License.ContentOne) %></td>
+                <td><%= anti.License.UpdatedAt %></td>
+                <td>
+                    <%= form({action:changeLicenseUpdateDatePostPath({license_id:anti.License.ID}),method:"post", style:"display:inline"}) { %>
+                    <input type="hidden" name="days" value="1">
+                    <input type="submit" class="btn btn-info" value="1 روز به عقب">
+                    <% } %>
+                    <%= form({action:changeLicenseUpdateDatePostPath({license_id:anti.License.ID}),method:"post", style:"display:inline"}) { %>
+                    <input type="hidden" name="days" value="3">
+                    <input type="submit" class="btn btn-info" value="3 روز به عقب">
+                    <% } %>
+                    <%= form({action:changeLicenseUpdateDatePostPath({license_id:anti.License.ID}),method:"post", style:"display:inline"}) { %>
+                    <input type="hidden" name="days" value="7">
+                    <input type="submit" class="btn btn-info" value="1 هفته به عقب">
+                    <% } %>
+                    <%= form({action:changeLicenseUpdateDatePostPath({license_id:anti.License.ID}),method:"post", style:"display:inline"}) { %>
+                    <input type="hidden" name="days" value="31">
+                    <input type="submit" class="btn btn-info" value="1 ماه به عقب">
+                    <% } %>
+                    <%= form({action:changeLicenseUpdateDatePostPath({license_id:anti.License.ID}),method:"post", style:"display:inline"}) { %>
+                    <input type="hidden" name="days" value="94">
+                    <input type="submit" class="btn btn-dark" value="3 ماه به عقب">
+                    <% } %>
+                    <%= form({action:changeLicenseUpdateDatePostPath({license_id:anti.License.ID}),method:"post", style:"display:inline"}) { %>
+                    <input type="hidden" name="days" value="187">
+                    <input type="submit" class="btn btn-danger" value="6 ماه به عقب">
+                    <% } %>
+                </td>
+            </tr>
+
+            <% } %>
+        </table>
+
+
+
+        <div></div>
+
+
+    </div>
+</div>
+

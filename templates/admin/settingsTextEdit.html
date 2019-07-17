@@ -1,0 +1,18 @@
+<form action="<%=  %>" method="post" role="form">
+    <legend>Form Title</legend>
+    <%= form({action:adminTextSettingsPostPath({setting_id:setting.ID}),method:"post"}){ %>
+    <div class="form-group">
+
+
+        <label for="value">value</label>
+        <textarea type="text" class="form-control" name="value" id="value" ><%= setting.Value %></textarea>
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+    <% } %>
+</form>
+
+<%= partial("tinymceFull.html") %>

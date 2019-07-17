@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Edit Anti</h1>
+</div>
+
+<%= form_for(anti, {action: antiPath({ anti_id: anti.ID }), method: "PUT"}) { %>
+  <%= partial("antis/form.html") %>
+  <a href="<%= antiPath({ anti_id: anti.ID }) %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+<% } %>

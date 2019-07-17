@@ -1,0 +1,20 @@
+<div class="row" style="margin-left: 0;padding-left: 0">
+  <div class="col-md-12">
+    <%= for (k, messages) in flash { %>
+      <%= for (msg) in messages { %>
+        <div class="alert alert-<%= k %>" id="flashMessage" role="alert">
+          <%= msg %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="closeFlashFunc()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+</div>
+
+<script>
+  function closeFlashFunc(){
+    document.getElementById("flashMessage").style.display = "none"
+  }
+</script>

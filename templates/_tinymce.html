@@ -1,0 +1,23 @@
+<script src="/assets/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: '#tiny',
+        language:"fa_IR",
+        height: 500,
+        menubar:false,
+        contextmenu_never_use_native: false,
+        autosave_ask_before_unload: false,
+        powerpaste_allow_local_images: false,
+        plugins: [
+            "image media link codesample code",
+            // "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools tinydrive",
+            // " lists link media noneditable powerpaste preview",
+            // " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount mentions"
+        ],
+        toolbar:
+            "insertfile a11ycheck undo redo | bold italic | forecolor backcolor | codesample | alignleft aligncenter alignright alignjustify | fontsizeselect | link image media | code",
+        spellchecker_dialog: false,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode'],
+
+    });
+</script>

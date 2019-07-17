@@ -1,0 +1,9 @@
+create_table("licenses") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("license_text", "string", {})
+	t.Column("email", "string", {})
+	t.Column("is_sold", "bool", {})
+	t.Column("period_day", "integer", {})
+	t.Column("anti_id", "integer", {})
+	t.Timestamps()
+}

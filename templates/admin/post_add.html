@@ -1,0 +1,41 @@
+<div class="col-sm-12 form-group" >
+
+
+    <%= form({action:adminPostAddPostPath(), method:"post"}){ %>
+    <div class="row">
+
+        <label for="antivirusSelect">انتخاب آنتی ویروس:</label>
+        <select name="antivirusha" id="antivirusSelect" class="form-control">
+            <%= for (anti) in antivirushas { %>
+            <option value="<%= anti.ID %>"><%= anti.Name %> - <%= anti.NameFa %> - <%= anti.Type %></option>
+            <% } %>
+        </select>
+
+    </div>
+    <br>
+    <div class="row">
+        <label for="postTypeSelect">انتخاب نوع پست:</label>
+        <select name="postType" id="postTypeSelect" class="form-control">
+            <%= for (postType) in postTypes { %>
+            <option value="<%= postType.ID %>"><%= postType.Name %></option>
+            <% } %>
+        </select>
+    </div>
+    <br>
+    <div class="row">
+        <label for="title">عنوان</label>
+        <input class="form-control" type="text" name="title">
+    </div>
+    <div class="row">
+        <label for="tiny">متن:</label>
+        <textarea name="content" id="tiny" cols="30" rows="10" style="width: 100%"></textarea>
+    </div>
+    <br>
+    <div class="row">
+        <input type="submit" class="btn-success btn" value="ارسال">
+    </div>
+    <% } %>
+
+</div>
+
+<%= partial("tinymceFull.html") %>

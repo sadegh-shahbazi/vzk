@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>آپلود</title>
+</head>
+<body>
+<h2>آپلود با اسم تصادفی</h2>
+
+<%= form({action: indexUploadPostPath(), method:"post"}){ %>
+<label for="image1"> عکس را انتخاب کنید:</label>
+<%= f.FileTag({name:"image1", style:"width:300px"}) %>
+
+<input class="btn btn-success" type="submit" value="آپلود">
+<% } %>
+
+</body>
+</html>

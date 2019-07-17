@@ -1,0 +1,48 @@
+<% contentFor("title"){ %>
+login
+<% } %>
+<% contentFor("style"){ %>
+<% } %>
+<style>
+  .auth-wrapper{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-wrapper .sign-form{
+    max-width: 350px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .auth-wrapper h1{margin-bottom: 20px;}
+</style>
+
+<div class="auth-wrapper">
+  <div class="sign-form">
+    <h1>ورود</h1>
+
+    <%= form_for(user, {action: signinPath()}) { %>
+    <label for="Email">ایمیل</label>
+    <input type="text" class="form-control" name="Email" id="Email">
+    <br>
+    <label for="Password">پسورد</label>
+    <input type="password" class="form-control" name="Password" id="Password">
+    <br>
+
+      <%#= f.InputTag("Email") %>
+      <%#= f.InputTag("Password", {type: "password"}) %>
+      <button class="btn btn-success">ورود</button>
+    <% } %>
+    <br>
+    <br>
+    <a class="" href="/register">ثبت نام</a>
+    <br>
+    <a class="" href="/recovery">فراموشی کلمه عبور</a>
+  </div>
+</div>
+
+<% contentFor("script"){ %>
+<% } %>

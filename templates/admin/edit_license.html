@@ -1,0 +1,42 @@
+<%= form({action:adminLicenseAddPostPath({license_id:license.ID}), method:"post"}){ %>
+
+<input type="hidden" name="Referer" value="<%= Referer %>">
+
+<input type="submit" value="ذخیره" class="btn btn-success">
+<input type="checkbox" name="add_post" value="add_post"  >افزودن پست جدید <br>
+<br>
+<div>عنوان:</div>
+<input type="text" class="form-control" name="title" value="<%= title %>">
+<div>متن معمولی:</div>
+<textarea name="ContentOne" class="form-control tiny" cols="30" rows="10"><%= license.ContentOne %></textarea>
+<br>
+<div>متن ویژه:</div>
+<textarea name="ContentOneVip" class="form-control tiny" cols="30" rows="10"><%= license.ContentOneVip %></textarea>
+<br>
+<div>متن معمولی:</div>
+<textarea name="ContentTwo" class="form-control tiny" cols="30" rows="10"><%= license.ContentTwo %></textarea>
+<br>
+<div>متن ویژه:</div>
+<textarea name="ContentTwoVip" class="form-control tiny" cols="30" rows="10"><%= license.ContentTwoVip %></textarea>
+<br>
+<div>متن معمولی:</div>
+<textarea name="ContentThree" class="form-control tiny" cols="30" rows="10"><%= license.ContentThree %></textarea>
+<br>
+<div>متن ویژه:</div>
+<textarea name="ContentThreeVip" class="form-control tiny" cols="30" rows="10"><%= license.ContentThreeVip %></textarea>
+<br>
+<div>متن معمولی:</div>
+<textarea name="ContentFour" class="form-control tiny" cols="30" rows="10"><%= license.ContentFour %></textarea>
+<br>
+<div>متن ویژه:</div>
+<textarea name="ContentFourVip" class="form-control tiny" cols="30" rows="10"><%= license.ContentFourVip %></textarea>
+<br>
+<div>متن معمولی:</div>
+<textarea name="ContentFive" class="form-control tiny" cols="30" rows="10"><%= license.ContentFive %></textarea>
+<br>
+<input type="submit" value="ذخیره" class="btn btn-success">
+<input type="checkbox" name="add_post" value="add_post"  >افزودن پست جدید <br>
+
+<% } %>
+
+<%= partial("tinymceFull.html") %>

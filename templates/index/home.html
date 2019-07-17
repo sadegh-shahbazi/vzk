@@ -1,0 +1,295 @@
+<% contentFor("title"){ %>
+<%= title %>
+<% } %>
+
+<% contentFor("style"){ %>
+<meta name="Description" content="<%= meta %>">
+
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>
+<style>
+    .pOfComments *{
+        margin:0;
+        padding: 0;
+    }
+</style>
+<% } %>
+
+<div class="myContent animated"
+     style="background-color: #ffffff;visibility: visible; animation-delay: 0s; animation-name: fadeIn;">
+    <div class="myContentChild">
+        <%= raw(headerText.Value) %>
+    </div>
+</div>
+
+<div class="myContent animated"
+     style="background-color: #ffffff ;visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+    <div class="myContentChild">
+
+    <% let i = 0.0 %>
+    <%= for (antivirus) in antiviruses { %>
+    <div class="card with-photo animated" style="visibility: visible; animation-delay: <%= i %>s; animation-name: fadeIn;">
+    <% i = i + 0.05 %>
+
+        <a href="<%= indexLicensePath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> license">
+            <header class="card-header">
+                <img src="<%= antivirus.Image %>" alt="عکس
+                    <%= antivirus.Name %>">
+            </header>
+        </a>
+
+        <section class="card-body">
+            <nav class="card-nav ">
+                <button class="nav-dots" title="<%= antivirus.Name %> Menu" aria-label="<%= antivirus.Name %> menu">
+                    <span class="nav-icon icon-one"></span>
+                    <span class="nav-icon icon-two"></span>
+                    <span class="nav-icon icon-three"></span>
+                </button>
+                <ul>
+                    <li>
+                        <a href="<%= indexDownloadPath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> download">
+                            دانلود
+                            <%= antivirus.NameFa %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= indexLicensePath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> license">
+                            لایسنس
+                            <%= antivirus.NameFa %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= indexAboutPath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> about">
+                            درباره
+                            <%= antivirus.NameFa %>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h2 class="card-h2"><%= antivirus.Name %></h2>
+            <h2 class="card-h2"> لایسنس
+                <%= antivirus.NameFa %>
+                <%= antivirusNewVersionDate() %>
+            </h2>
+            <%= if(antivirus.IsFree){ %>
+            <p class="card-p" style="color: green">
+                آپدیت لایسنس :
+                <%= now() %>
+            </p>
+            <% } else { %>
+            <p class="card-p" style="color:<%= licenseDateColor(antivirus.License.UpdatedAt) %>">
+                آپدیت لایسنس :
+                <%= persianLicenseUpdate(antivirus.License.UpdatedAt) %>
+            </p>
+            <% } %>
+            <a class="card-a" href="<%= indexLicensePath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> license">بیشتر</a>
+        </section>
+    </div>
+    <% } %>
+
+    </div>
+
+</div>
+<br>
+<br>
+<div class="myContent animated"
+     style="background-color: #ffffff;visibility: visible; animation-delay: 0s; animation-name: fadeIn;">
+    <div class="myContentChild">
+        <%= raw(mofidText.Value) %>
+    </div>
+</div>
+
+
+<div class="myContent animated"
+     style="background-color: #ffffff ;visibility: visible; animation-delay: 0.0s; animation-name: fadeIn;">
+
+    <div class="myContentChild">
+
+    <% i = 0.0 %>
+    <%= for (antivirus) in mofids { %>
+    <div class="card with-photo animated" style="visibility: visible; animation-delay: <%= i %>s; animation-name: fadeIn;">
+        <% i = i + 0.05 %>
+
+        <a href="<%= indexMofidLicensePath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> license">
+            <header class="card-header">
+                <img src="<%= antivirus.Image %>" alt="عکس
+                    <%= antivirus.Name %>">
+            </header>
+        </a>
+
+        <section class="card-body">
+            <nav class="card-nav ">
+                <button class="nav-dots" title="<%= antivirus.Name %> Menu" aria-label="<%= antivirus.Name %> menu">
+                    <span class="nav-icon icon-one"></span>
+                    <span class="nav-icon icon-two"></span>
+                    <span class="nav-icon icon-three"></span>
+                </button>
+                <ul>
+                    <li>
+                        <a href="<%= indexMofidDownloadPath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> download">
+                            دانلود
+                            <%= antivirus.NameFa %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= indexMofidLicensePath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> license">
+                            لایسنس
+                            <%= antivirus.NameFa %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= indexMofidAboutPath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> about">
+                            درباره
+                            <%= antivirus.NameFa %>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h2 class="card-h2"><%= antivirus.Name %></h2>
+            <h2 class="card-h2"> لایسنس
+                <%= antivirus.NameFa %>
+                <%= antivirusNewVersionDate() %>
+            </h2>
+            <%= if(antivirus.IsFree){ %>
+            <p class="card-a" style="color: green">
+                آپدیت لایسنس :
+                <%= now() %>
+            </p>
+            <% } else { %>
+            <p class="card-p" style="color:<%= licenseDateColor(antivirus.License.UpdatedAt) %>">
+                آپدیت لایسنس :
+                <%= persianLicenseUpdate(antivirus.License.UpdatedAt) %>
+            </p>
+            <% } %>
+            <a class="card-a" href="<%= indexMofidLicensePath({antivirus_name:antivirus.Name}) %>" aria-label="<%= antivirus.Name %> license">بیشتر</a>
+        </section>
+    </div>
+    <% } %>
+
+    </div>
+
+</div>
+
+<br>
+<br>
+<!--h1 class=" animated"
+    style="background-color: #ffffff;visibility: visible; animation-delay: 0s; animation-name: fadeIn;">
+    آخرین مطالب:
+</h1>
+<div class="myContent animated"
+     style="background-color: #ffffff;visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+    <div class="newBlockChild">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="row">
+
+                        <a href="<#%= indexAllQuestionPath() %>" style="color: black;"><h3>آخرین سوالات:</h3></a>
+                        <ul>
+                            <#%= for(post) in questions { %>
+                            <li><a href="/question/<#%= post.ID %>-<#%= post.Title %>" class="card-a"><h1
+                                            style="font-size: small; "><span
+                                                style="font-size: 18px;"><#%= post.Title %></span></h1></a></li>
+                            <#% } %>
+                            <br>
+                            <li><a href="<#%= indexAllQuestionPath() %>">بیشتر...</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="row">
+
+                        <a href="<#%= indexAllArticlePath() %>" style="color: black;"><h3>آخرین مقالات:</h3></a>
+                        <ul>
+                            <#%= for(post) in articles { %>
+                            <li><a href="/article/<#%= post.ID %>-<#%= post.Title %>" class="card-a"><h1
+                                            style="font-size: small; "><span
+                                                style="font-size: 18px;"><#%= post.Title %></span></h1></a></li>
+                            <#% } %>
+                            <br>
+                            <li><a href="<#%= indexAllArticlePath() %>">بیشتر...</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="row">
+
+                        <a href="<#%= indexSoftwarePath() %>" style="color: black;"><h3>آخرین لایسنس ها:</h3></a>
+                        <ul>
+                            <#%= for(post) in otherLicenses { %>
+                            <li><a href="/software/<#%= post.ID %>-<#%= post.Title %>" class="card-a"><h1
+                                            style="font-size: small;"><span
+                                                style="font-size: 18px;"><#%= post.Title %></span></h1></a></li>
+                            <#% } %>
+                            <br>
+                            <li><a href="<#%= indexSoftwarePath() %>">بیشتر...</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="row">
+
+                        <a href="<#%= indexAllPostPath() %>" style="color: black;"><h3>آخرین پست ها:</h3></a>
+                        <ul>
+                            <#%= for(post) in posts { %>
+                            <li><a href="/<#%= post.ID %>/post" class="card-a"><h1
+                                            style="font-size: small;"><span
+                                                style="font-size: 18px;"><#%= post.Title %></span></h1></a></li>
+                            <#% } %>
+                            <br>
+                            <li><a href="<#%= indexAllPostPath() %>">بیشتر...</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="row">
+
+                        <a href="<#%= allCommentsPath() %>" style="color: black;"><h3>آخرین دیدگاه ها:</h3></a>
+                        <ul>
+                            <#%= for(comment) in comments { %>
+                            <li id="">
+                                <a href='<#%= partial("index/comments_link.html") %>' class="card-a">
+                                    <span style="font-size: small; margin: 0;padding:0">
+                                        <span style=" font-size: 12px" class="pOfComments"><#%= raw(truncate(comment.Content)) %></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <#% } %>
+                            <br>
+                            <li><a href="<#%= allCommentsPath() %>">بیشتر...</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<br>
+<br-->
+
+
+<% contentFor("script"){ %>
+<script>
+    $(".card-nav .nav-dots").on("click", function () {
+        $(this)
+            .parent()
+            .toggleClass("is-active");
+    });
+</script>
+
+<% } %>

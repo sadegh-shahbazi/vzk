@@ -1,0 +1,176 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-right image">
+                <img src="<%= current_user.Image %>" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p><%= current_user.Name %></p>
+                <a href="#"><i class="fa fa-circle text-success"></i> آنلاین</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="جستوجو ...">
+                <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+
+            <!--li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>پیشخوان</span> <i class="fa fa-angle-left pull-left"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> پیشخوان v1</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> پیشخوان v2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="pages/widgets.html">
+                    <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-left bg-green">new</small>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Charts</span>
+                    <i class="fa fa-angle-left pull-left"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                    <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                </ul>
+            </li-->
+
+            <li class="header">ناوبری اصلی</li>
+
+            <li>
+                <a href="/" target="_blank">
+                    <i class="fa fa-desktop"></i>
+                    <span>وبسایت</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin">
+                    <i class="fa fa-dashboard"></i>
+                    <span>پنل ادمین</span>
+                </a>
+            </li>
+
+
+            <li class="header">دسترسی سریع</li>
+
+            <li>
+                <a href="/upload/randomName">
+                    <i class="fa fa-upload"></i>
+                    <span>آپلود با اسم تصادفی</span>
+                </a>
+            </li>
+            <li>
+                <a href="/upload/specific">
+                    <i class="fa fa-upload"></i>
+                    <span>آپلود با اسم مشخص</span>
+                </a>
+            </li>
+            <li>
+                <a href="/upload/apk">
+                    <i class="fa fa-upload"></i>
+                    <span>آپلود اپ موبایل</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/admin/mataleb">
+                    <i class="fa fa-upload"></i>
+                    <span>آخرین مطالب سایت</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/admin/add_vip_account">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>افزودن اکانت ویژه</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/post/add">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>افزودن پست</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/change_license_updated_date">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>تغییر تاریخ آپدیت لایسنس ها</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/report">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>گزارش ها</span>
+                </a>
+            </li>
+
+
+            <li class="header">دسترسی کامل</li>
+
+            <li>
+                <a href="/antivirushas">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>آنتی ویروس ها و ویندوز</span>
+                </a>
+            </li>
+            <li>
+                <a href="/licenses">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>لایسنس ها</span>
+                </a>
+            </li>
+            <li>
+                <a href="/posts">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>پست ها</span>
+                </a>
+            </li>
+            <li>
+                <a href="/comments">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>کامنت ها</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/settings/texts">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>تنظیمات متن های سایت</span>
+                </a>
+            </li>
+            <li>
+                <a href="/settings">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>تنظیمات سایت</span>
+                </a>
+            </li>
+            <li>
+                <a href="/users_admins">
+                    <i class="fa fa-circle-o text-aqua"></i>
+                    <span>یوزر ها</span>
+                </a>
+            </li>
+
+
+
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

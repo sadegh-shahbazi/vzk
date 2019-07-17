@@ -1,0 +1,6 @@
+- id: "anti.created.success"
+  translation: "Anti was successfully created."
+- id: "anti.updated.success"
+  translation: "Anti was successfully updated."
+- id: "anti.destroyed.success"
+  translation: "Anti was successfully destroyed."

@@ -1,0 +1,41 @@
+<% contentFor("title"){ %>
+account recovery
+<% } %>
+<% contentFor("style"){ %>
+<% } %>
+<style>
+    .auth-wrapper{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .auth-wrapper .sign-form{
+        max-width: 350px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .auth-wrapper h1{margin-bottom: 20px;}
+</style>
+
+<div class="auth-wrapper">
+    <div class="sign-form">
+        <h1>فراموشی رمز عبور</h1>
+
+        <%= form({action:recoveryPostPath(), method:"post"}) { %>
+        <label for="Email">ایمیل خود را وارد کنید:</label>
+        <%= f.InputTag({name:"Email", id:"Email"}) %>
+
+        <button class="btn btn-success">فرستادن لینک فعال سازی</button>
+        <% } %>
+        <br>
+        <br>
+        <a class="" href="/recover">کد فعال سازی قبلا ارسال شده</a>
+        <br>
+        <a class="" href="/login">ورود</a>
+        <br>
+        <a class="" href="/register">ثبت نام</a>
+    </div>
+</div>
+<% contentFor("script"){ %>
+<% } %>

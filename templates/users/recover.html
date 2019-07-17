@@ -1,0 +1,49 @@
+<% contentFor("title"){ %>
+account recover
+<% } %>
+<% contentFor("style"){ %>
+<% } %>
+<style>
+    .auth-wrapper{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .auth-wrapper .sign-form{
+        max-width: 350px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .auth-wrapper h1{margin-bottom: 20px;}
+</style>
+
+<div class="auth-wrapper">
+    <div class="sign-form">
+        <h1>بازیابی کلمه عبور</h1>
+
+        <%= form({action:recoverPostPath(), method:"post"}) { %>
+        <label for="Email">ایمیل شما:</label>
+        <input type="text" name="Email" id="Email" class="form-control"  <%= if( len(recoveryEmail) > 4){ %> disabled value="<%= recoveryEmail %>" <% } %> >
+        <%= if( len(recoveryEmail) > 4){ %>
+        <input type="hidden" name="Email" id="Email" value="<%= recoveryEmail %>">
+        <% } %>
+        <br>
+        <label for="ActivationCode">کد فعال سازی را وارد کنید:</label>
+        <%= f.InputTag({name:"ActivationCode"}) %>
+        <label for="Password">رمز عبور جدید خود را وارد کنید:</label>
+        <%= f.InputTag({name:"Password", type: "password"}) %>
+        <label for="PasswordConfirmation">رمز عبور خود را مجدد وارد کنید:</label>
+        <%= f.InputTag({name:"PasswordConfirmation", type: "password"}) %>
+
+        <button class="btn btn-success">بروزرسانی</button>
+        <% } %>
+
+        <br>
+        <br>
+        <a class="" href="/recovery">کد فعال سازی را ندارید</a>
+
+    </div>
+</div>
+<% contentFor("script"){ %>
+<% } %>

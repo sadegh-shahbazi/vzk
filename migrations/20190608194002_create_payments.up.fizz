@@ -1,0 +1,13 @@
+create_table("payments") {
+	t.Column("id", "integer", {"auto_increment": true, primary: true})
+	t.Column("amount", "integer", {})
+	t.Column("email", "string", {})
+	t.Column("mobile", "string", {})
+	t.Column("description", "string", {})
+	t.Column("ref_id", "string", {})
+	t.Column("message", "string", {})
+	t.Column("athority", "string", {})
+	t.Column("status", "integer", {})
+	t.Column("user_id", "integer", {})
+	t.Timestamps()
+}

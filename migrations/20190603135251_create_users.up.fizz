@@ -1,0 +1,22 @@
+create_table("users"){
+    t.Column("id", "integer", {"auto_increment": true,"primary": true})
+    t.Column("email", "string", {})
+    t.Column("password_hash", "string", {})
+    t.Column("UID", "uuid", {})
+    t.Column("recovery_code", "string", {"null": true})
+    t.Column("recovery_expiration", "datetime", {"null": true})
+    t.Column("name", "string", {"null": true,"size": 100})
+    t.Column("remember_token", "string", {"null": true,"size": 191})
+    t.Column("is_active", "bool", {"default": true})
+    t.Column("image", "string", {"null": true,"size": 191})
+    t.Column("image_original", "string", {"null": true,"size": 191})
+    t.Column("bio", "text", {"null": true})
+    t.Column("liked", "integer", {"default": 0})
+    t.Column("disliked", "integer", {"default": 0})
+    t.Column("vip_end_time", "timestamp", {"null":true})
+    t.Column("balance", "integer", {"default": 0})
+    t.Column("withdraw", "integer", {"default": 0})
+    t.Column("last_withdraw_date", "timestamp", {"null":true})
+
+    t.Column("role_id", "integer", {"default": 1})
+}

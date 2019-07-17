@@ -1,0 +1,13 @@
+create_table("antis") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("name", "string", {})
+	t.Column("name_fa", "string", {})
+	t.Column("type_name", "string", {})
+	t.Column("type_name_fa", "string", {})
+	t.Column("description", "string", {})
+	t.Column("image", "string", {})
+	t.Column("anti_order", "integer", {})
+	t.Column("price", "integer", {})
+	t.Column("period_day", "integer", {})
+	t.Timestamps()
+}

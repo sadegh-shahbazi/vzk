@@ -1,0 +1,5 @@
+create_table("throttles") {
+	t.Column("id", "integer", {"auto_increment": true, primary: true})
+	t.Column("ip", "string", {})
+	t.Timestamps()
+}

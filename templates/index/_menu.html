@@ -1,0 +1,79 @@
+<div class="topnav" id="myTopnav">
+    <a href="" style="width:0px;padding:0px;margin:0px"></a>
+    <a class="
+    <%= if ( ( current_path == indexLicensePath({antivirus_name:antivirusName}) )||( current_path == indexDownloadPath({antivirus_name:antivirusName}) )||( current_path == indexAboutPath({antivirus_name:antivirusName}) ) || (current_path == indexArticleSecondPath({antivirus_name:antivirusName})) || (current_path == indexQuestionSecondPath({antivirus_name:antivirusName})) ){ %>
+    active
+    <% } %>
+    <%= if ( current_path == homePath() ){ %>
+    active
+    <% } %>
+" href="/">آنتی ویروس کامپیوتر</a>
+    <a class="
+        <%= if( current_path == indexLicenseMobilePath({antivirus_name:antivirusName}) || current_path == indexDownloadMobilePath({antivirus_name:antivirusName}) || current_path == indexAboutMobilePath({antivirus_name:antivirusName}) ){ %>
+    active
+    <% } %>
+    <%= if( current_path == indexMobileAntivirusPath() ){ %>
+    active
+    <% } %>
+" href="/mobile_antivirus">آنتی ویروس موبایل</a>
+    <a class="
+  <%= if(current_path == windowsPath()){ %>
+    active
+    <% } %>
+    <%= if(current_path == windowsLicensePath({windows_id_and_title:antivirusName})){ %>
+    active
+    <% } %>
+" href="/windows">فعال ساز ویندوز</a>
+    <a class="
+  <%= if(current_path == indexSoftwarePath()){ %>
+    active
+    <% } %>
+    <%= if(post) { %>
+
+     <% let wiat = softwareTitle(post.ID, post.Title) %>
+    <%= if( current_path == indexSoftwareArticlePath({article_id_and_title:wiat}) ){ %>
+    active
+    <% } %>
+    <% } %>
+" href="/software">لایسنس سایر نرم افزار ها</a>
+    <a class="
+<%= if(current_path == indexRulesPath()){ %>
+    active
+    <% } %>
+" href="/rules">قوانین سایت</a>
+    <a class="
+<%= if(current_path == indexContactUsPath()){ %>
+    active
+    <% } %>
+" href="/contact_us">تماس با ما</a>
+    <a class="
+<%= if(current_path == indexShopPath()){ %>
+    active
+    <% } %>
+" href="/shop">خرید اکانت ویژه</a>
+    <a class="
+<%= if(current_path == indexMatalebPath()){ %>
+    active
+    <% } %>
+" href="/mataleb">نوشته ها</a>
+
+    <%= if (current_user) { %>
+    <a href="/logout" style="background-color: rgb(161,81,81)">خروج</a>
+    <a class="
+<%= if(current_path == indexProfilePath()){ %>
+    active
+    <% } %>
+" href="/profile">پروفایل</a>
+    <% }else{ %>
+    <a class="" href="/login" style="background-color: rgb(0,100,61)"><b>ورود</b> </a>
+    <a class="
+<%= if(current_path == registerPath()){ %>
+    active
+    <% } %>
+" href="/register">ثبت نام</a>
+    <% } %>
+
+    <a href="javascript:void(0);" class="icon" onclick="menuFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
